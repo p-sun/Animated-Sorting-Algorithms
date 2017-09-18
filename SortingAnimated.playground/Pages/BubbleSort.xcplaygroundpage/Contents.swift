@@ -13,7 +13,7 @@
 
 let arrayLength = 30
 let maxNumber = 40
-var array = randomArray(count: arrayLength, maxNumber: maxNumber)
+var array = randomArray(length: arrayLength, min: maxNumber / 30, max: maxNumber)
 
 let arrayView = ArrayStackView()
 arrayView.show()
