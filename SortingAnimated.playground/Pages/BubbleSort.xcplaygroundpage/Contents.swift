@@ -11,7 +11,7 @@
  Note that in the first iteration, the largest item will be in the last position.
  */
 
-let arrayLength = 30
+let arrayLength = 40
 let maxNumber = 40
 var array = randomArray(length: arrayLength, min: maxNumber / 30, max: maxNumber)
 
