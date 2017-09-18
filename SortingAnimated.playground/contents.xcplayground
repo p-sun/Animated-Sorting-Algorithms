@@ -3,6 +3,6 @@
     <pages>
         <page name='SortingAnimated - Title'/>
         <page name='BubbleSort'/>
-        <page name='MergeSort'/>
+        <page name='MergeSortInPlace'/>
     </pages>
 </playground>

@@ -9,8 +9,8 @@ public class ArrayStackView: UIView {
         }
     }
     
-    private let viewWidth: CGFloat = 460
-    private let viewHeight: CGFloat = 300
+    private let viewWidth: CGFloat = 600
+    private let viewHeight: CGFloat = 400
     
     // MARK: Init
     
@@ -28,6 +28,18 @@ public class ArrayStackView: UIView {
     public func show() {
         PlaygroundPage.current.needsIndefiniteExecution = true
         PlaygroundPage.current.liveView = self
+    }
+    
+    // MARK: Insert Values
+    
+    public func insertValues(newValues: [Int], startingFrom start: Int) {
+        var currentValues = values
+        
+        for (index, value) in newValues.enumerated() {
+            currentValues[index + start] = value
+        }
+        
+        values = currentValues
     }
     
     // MARK: Configure Views
