@@ -9,8 +9,8 @@ public class ArrayStackView: UIView {
         }
     }
     
-    private let viewWidth: CGFloat = 400
-    private let viewHeight: CGFloat = 300
+    private let viewWidth: CGFloat = 600
+    private let viewHeight: CGFloat = 400
     
     // MARK: Init
     
