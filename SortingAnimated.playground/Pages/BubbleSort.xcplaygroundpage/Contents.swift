@@ -11,32 +11,28 @@
  Note that in the first iteration, the largest item will be in the last position.
  */
 
-let arrayLength = 40
-let maxNumber = 40
-var array = randomArray(length: arrayLength, min: maxNumber / 30, max: maxNumber)
+import Foundation
 
+var array = randomArray(length: 40, max: 100)
 let arrayView = ArrayStackView()
-arrayView.show()
-arrayView.values = array
 
 var isSorted: Bool
 
 repeat {
     isSorted = true
-    
+
     // Check each value in the array
     for i in 0..<array.count - 1 {
-        
+
         // Compare current value to the next
         if array[i] > array[i + 1] {
-            
+
             // Swap if needed
             array.swapAt(i, i + 1)
-            arrayView.values = array
+            arrayView.update(with: array)
             isSorted = false
         }
     }
-    
 } while (!isSorted)
 
 assert(array == array.sorted())

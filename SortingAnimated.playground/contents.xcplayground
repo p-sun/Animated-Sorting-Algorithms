@@ -4,5 +4,7 @@
         <page name='SortingAnimated - Title'/>
         <page name='BubbleSort'/>
         <page name='MergeSortInPlace'/>
+        <page name='QuickSort'/>
+        <page name='DelayOperationDemo'/>
     </pages>
 </playground>

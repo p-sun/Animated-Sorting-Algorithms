@@ -1,19 +1,20 @@
 import Foundation
 
-extension MutableCollection where Index == Int {
-    public mutating func swapAt(_ a: Int, _ b: Int) {
-        Swift.swap(&self[a], &self[b])
-    }
-
-}
-
-public func randomArray(length: Int, min: Int, max: Int) -> [Int] {
+public func randomArray(length: Int, max: Int) -> [Int] {
     var array = [Int]()
     
+    let min = max / 30
     for _ in 1...length {
         let randomDiff = Int(arc4random_uniform(UInt32(max - min)))
         array.append(min + randomDiff)
     }
     
     return array
+}
+
+public extension Array where Iterator.Element == Int {
+    public mutating func replace(_ newValues: [Int], startingIndex: Int) {
+        let newSubRange = startingIndex..<(startingIndex + newValues.count)
+        self.replaceSubrange(newSubRange, with: newValues)
+    }
 }

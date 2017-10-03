@@ -1,12 +1,10 @@
 // MergeSort
 
-let arrayLength = 40
-let maxNumber = 40
-var array = randomArray(length: arrayLength, min: maxNumber / 30, max: maxNumber)
+var array = randomArray(length: 40, max: 100)
+var arrayForDisplay = array
 
 let arrayView = ArrayStackView()
-arrayView.show()
-arrayView.values = array
+arrayView.update(with: array)
 
 public func merge<T: Comparable>(from start: Int, _ left: [T], _ right: [T]) -> [T] {
     var leftIndex = 0
@@ -36,9 +34,8 @@ public func merge<T: Comparable>(from start: Int, _ left: [T], _ right: [T]) -> 
         let remainingRight = Array(right[rightIndex ..< right.count])
         let newValues = orderedArray + remainingLeft + remainingRight
         
-        arrayView.insertValues(
-            newValues: newValues as! [Int],
-            startingFrom: start)
+        arrayForDisplay.replace(newValues as! [Int], startingIndex: start)
+        arrayView.update(with: arrayForDisplay)
     }
     
     while leftIndex < left.count {
@@ -68,7 +65,7 @@ func mergeSort(from start: Int, a: inout [Int]) {
     a = merge(from: start, left, right)
     
     // Update Method B - Only update after merging two arrays
-    // arrayView.insertValues(newValues: a, startingFrom: start)
+    // arrayView.replaceValues(newValues: a, startingFrom: start)
 }
 
 mergeSort(from: 0, a: &array)

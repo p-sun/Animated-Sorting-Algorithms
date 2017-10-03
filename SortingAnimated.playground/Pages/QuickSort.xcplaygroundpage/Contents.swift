@@ -1,20 +1,16 @@
 // QuickSort
 
-let arrayLength = 180
-let maxNumber = 10000
-var array = randomArray(length: arrayLength, min: maxNumber / 30, max: maxNumber)
-
+var array = randomArray(length: 40, max: 100)
 let arrayView = ArrayStackView()
-arrayView.show()
-arrayView.values = array
 
-// Quick sort a subarray from index start...end
+/// Quick sort a subarray from index start...end
+/// Note that you can randomly pick a pivotIndex and avoid worst case O(N^2) complexity when the starting array is reversed.
 func quickSort(_ array: inout [Int], start: Int, end: Int) {
     guard start < end else { return }
-    
-    let pivotIndex = (start + end) / 2 // TODO Randomize the partition
+
+    let pivotIndex = (start + end) / 2
     let pivotElement = array[pivotIndex]
-    
+
     let p = partition(&array, start: start, end: end, pivot: pivotElement)
     quickSort(&array, start: start, end: p)
     quickSort(&array, start: p + 1, end: end)
@@ -28,14 +24,14 @@ func quickSort(_ array: inout [Int], start: Int, end: Int) {
 func partition(_ a: inout [Int], start: Int, end: Int, pivot: Int) -> Int {
     var i = start - 1
     var j = end + 1
-    
+
     while true {
         repeat { i += 1 } while a[i] < pivot
         repeat { j -= 1 } while a[j] > pivot
-        
+
         if i < j {
             a.swapAt(i, j)
-            arrayView.values = a
+            arrayView.update(with: a)
         } else {
             return j
         }
