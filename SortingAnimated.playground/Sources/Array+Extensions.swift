@@ -13,7 +13,7 @@ public func randomArray(length: Int, max: Int) -> [Int] {
 }
 
 public extension Array where Iterator.Element == Int {
-    public mutating func replace(_ newValues: [Int], startingIndex: Int) {
+    mutating func replace(_ newValues: [Int], startingIndex: Int) {
         let newSubRange = startingIndex..<(startingIndex + newValues.count)
         self.replaceSubrange(newSubRange, with: newValues)
     }

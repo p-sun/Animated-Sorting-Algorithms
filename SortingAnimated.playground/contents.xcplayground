@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios'>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
     <pages>
-        <page name='SortingAnimated - Title'/>
-        <page name='BubbleSort'/>
-        <page name='MergeSortInPlace'/>
-        <page name='QuickSort'/>
         <page name='DelayOperationDemo'/>
+        <page name='BubbleSort_maxToRight'/>
+        <page name='SelectionSort_minToLeft'/>
+        <page name='SelectionSort_minToLeft_better'/>
+        <page name='MergeSort'/>
+        <page name='QuickSort'/>
     </pages>
 </playground>

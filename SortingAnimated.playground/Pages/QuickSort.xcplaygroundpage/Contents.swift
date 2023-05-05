@@ -1,5 +1,4 @@
-// QuickSort
-
+//: # QuickSort
 var array = randomArray(length: 40, max: 100)
 let arrayView = ArrayStackView()
 
